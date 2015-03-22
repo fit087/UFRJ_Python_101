@@ -1,4 +1,11 @@
-# -*- coding: cp1252 -*-
+# -*- coding: Latin -*-
+"""
+Created on Mon Mar 16 10:53:32 2015
+    1ra aula pratica de Computacao 1 na UFRJ.
+    Professora: Ana Maria
+@author: Adolfo Correa
+"""
+
 def soma(x,y):
     """Soma dos numeros"""
     return x+y
@@ -16,7 +23,7 @@ def multip(x,y):
         return x*y
 
 def div(x,y):
-        """Divis„o de x/y"""
+        """Divisao de x/y"""
         x=float(x)
         y=float(y)
         return x/y
@@ -34,24 +41,24 @@ def area():
         return a*b
 
 
-#Essa funÁ„o vai calcular a ·rea de um ret‚ngulo
+#Essa funcao vai calcular a area de um retangulo
 def retangulo(a,b):
         """Area de um retangulo"""
         return a*b
 
-#Essa funÁ„o vai calcular a ·rea de uma coroa circular
+#Essa funcao vai calcular a area de uma coroa circular
 def coroa(r1,r2):
         """Area da coroa"""
         pi=3.14
         area=pi*(r1**2-r2**2)
         return area
 
-#Divis„o de 2 nros inteiros
+#Divisao de 2 nros inteiros
 def div2(x,y):
         """Cociente e resto"""
         return x/y,x%y
 
-#Ordenada de uma funÁ„o do segundo grau
+#Ordenada de uma funcao do segundo grau
 def ordenada(a,b,c,x):
         """Ordenada de uma parabola"""
         return a*x**2+b*x+c
@@ -61,14 +68,112 @@ def gorjeta(a):
         """Gorjeta do garcao"""
         return a*0.1
 
-#MÈdia de dois valores
+#Media de dois valores
 def media(a,b):
         """Media de 2 numeros"""
         return (a+b)/2
 
 
-#MÈdia ponderada de dois valores
+#Media ponderada de dois valores
 def mediapon(a,p1,b,p2):
         """Media ponderada de 2 numeros"""
         p1=float(p1)
         return (a*p1+b*p2)/(p1+p2)
+
+
+#Distancia que a correnteza arrasta um barco que atravessa um rio.
+def dist_arraste(correnteza,largura,vel_barco):
+    """
+        Distancia que a correnteza arrasta um barco que atravessa 
+        um rio. Sao conhecidas: a velocidade da correnteza, a
+        largura do rio e a velocidade do barco perpendicular
+        a correnteza.
+        
+        float,float,float ‚Üí float
+
+    """
+    time=float(largura)/vel_barco
+    return correnteza*time
+    
+#Saldo Ô¨Ånal de uma conta.
+def saldoFinal(saldoInit, meses, juros):
+    """ 
+        Saldo Ô¨Ånal de uma conta, dado o saldo inicial, 
+        o numero de meses e a taxa de juros mensal.
+        
+        float,int,float ‚Üí float
+    """
+    return saldoInit*(1+juros*meses/100)
+ 
+# Erro entre o valor da soma de uma PG inÔ¨Ånita e outra finita
+def PG(n,q,a1=1.0):
+    """
+    Erro entre o valor da soma de uma PG inÔ¨Ånita a partir de 1.0 
+    e a soma dos n primeiros termos.  q eh a razao e 0 ‚â§ q < 1.
+    
+        int,float,float‚Üí float,float,float
+    
+    """
+    Sinf=1/(1-q)
+    Sn=a1*(1-q**n)/(1-q)
+    return Sinf-Sn,Sinf,Sn
+
+# Tempo da Maratona    
+def tempoProva(h0,m0,s0,hf,mf,sf):
+    """
+    Calcula o tempo total de prova de um corredor de maratona 
+    em horas, minutos e segundos, dados: o tempo de partida
+    (hh,mm,ss), e o tempo de chegada (hh,mm,ss).
+    
+    int,int,int‚Üí int,int,int
+
+    """
+    t0=h0*3600+m0*60+s0
+    tf=hf*3600+mf*60+sf
+    tf-=t0
+    hf=tf//3600
+    tf-=hf*3600
+    mf=tf//60
+    tf-=mf*60
+    sf=tf
+    return hf,mf,sf
+
+ #Conta compartilhada
+def equalitaria(conta,pessoas):
+    """
+    Calcula o valor da gorjeta (10%) e o quanto cada pessoa 
+    de um grupo deve pagar (divisaÀúo equalita¬¥ria).SaÀúo dados
+    o valor total da conta do restaurante e o nu¬¥mero de pessoas
+    na mesa.
+    
+    float,int‚Üí float
+
+    """
+    conta+=gorjeta(conta)
+    conta/=pessoas
+    return conta
+
+#Area Cubo
+def cubo(c):
+    """
+    Calcule a ¬¥area da superf¬¥ƒ±cie de um cubo que tem c por aresta.
+    
+        float‚Üí float
+    """
+    
+    return c**3
+    
+    
+# Testando as funcoes    
+print("dist_arraste(10,20,20)")
+print(dist_arraste(10,20,20))
+print("saldoFinal(100,12,10)")
+print(saldoFinal(100,12,10))
+print("PG(10,0.5)")
+print(PG(10,0.5))
+print("tempoProva(15,35,55,20,15,10)")
+print(tempoProva(15,35,55,20,15,10))
+print("equalitaria(100,4)")
+print(equalitaria(100,4))
+print("cubo(5)")
+print(cubo(5))

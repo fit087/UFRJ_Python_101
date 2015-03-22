@@ -34,9 +34,9 @@ def quadrado(a):
 
 def area():
         """Area de um retangulo"""
-        print 'a='
+        print ('a=')
         a=input()
-        print 'b='
+        print ('b=')
         b=input()
         return a*b
 

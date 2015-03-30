@@ -2,7 +2,7 @@
 """
 Created on Mon Mar 16 10:53:32 2015
     1ra aula pratica de Computacao 1 na UFRJ.
-    Professora: Ana Maria
+    Professora: Anamaria Martins Moreira (amartinsmoreira@gmail.com)
 @author: Adolfo Correa
 """
 

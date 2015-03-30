@@ -23,38 +23,24 @@ def multip(x,y):
     return x*y
 
 def div(x,y):
-<<<<<<< HEAD
     """Divisão de x/y"""
     x=float(x)
     y=float(y)
     return x/y
-=======
-        """Divisao de x/y"""
-        x=float(x)
-        y=float(y)
-        return x/y
->>>>>>> origin/master
+
 
 def quadrado(a):
     """Quadrado de a"""
     return a**2
 
 def area():
-<<<<<<< HEAD
     """Area de um retangulo"""
     print 'a='
     a=input()
     print 'b='
     b=input()
     return a*b
-=======
-        """Area de um retangulo"""
-        print ('a=')
-        a=input()
-        print ('b=')
-        b=input()
-        return a*b
->>>>>>> origin/master
+
 
 
 #Essa funcao vai calcular a area de um retangulo
@@ -92,14 +78,9 @@ def media(a,b):
 
 #Media ponderada de dois valores
 def mediapon(a,p1,b,p2):
-<<<<<<< HEAD
     """Media ponderada de 2 numeros"""
     p1=float(p1)
     return (a*p1+b*p2)/(p1+p2)
-=======
-        """Media ponderada de 2 numeros"""
-        p1=float(p1)
-        return (a*p1+b*p2)/(p1+p2)
 
 
 #Distancia que a correnteza arrasta um barco que atravessa um rio.
@@ -198,4 +179,3 @@ print("equalitaria(100,4)")
 print(equalitaria(100,4))
 print("cubo(5)")
 print(cubo(5))
->>>>>>> origin/master

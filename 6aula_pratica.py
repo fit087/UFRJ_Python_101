@@ -59,28 +59,94 @@ def ins_word(phrase, word, position):
 
 # Exc 5
 def sum_discriminate(lista):
-    nw_list1 = [ var[i] for var in lista[:] for i in (0,1)]
-    nw_list2 = [ var[2][i] for var in lista[:] for i in (0,1)]
-    countries = [ var for var in sorted(set(nw_list1))]
-    nw_list2 = zip(nw_list1, nw_list2)
-    final_list = zip(countries, [0 for i in countries])
+    nw_list1 = [ var[i] for var in lista[:] for i in (0,1)]     # Countries in every
+                                                                # ...game
+    nw_list2 = [ var[2][i] for var in lista[:] for i in (0,1)]  # Falls in every game
+    countries = [ var for var in sorted(set(nw_list1))]         # All countries
+#    print (countries)
+    nw_list2 = zip(nw_list1, nw_list2)                          # List of tuples
+                                                                # ...(country, falls)
+    final_list1 = list(zip(countries, [0 for i in countries]))
+    #final_list = zip(countries, [0]*len(countries))
+    #print("final_list ",final_list)
+    #print("final_list ",list(final_list))
+    #final_list1 = list(final_list)[:]
+    final_list = [list(tuple) for tuple in final_list1]
+    #final_list1 = [tuple for tuple in list(final_list)]
+    #for tuple in list(final_list):
+        #print("entrou")
+        #print(tuple)
+    #final_list = list(final_list)
+    ##print("final_list ",final_list)
+    ##print("final_list1 ",final_list1)
+    #print("final_list1 ",final_list1)
     #final_list = [ elm += var1[1] for var1 in nw_list2 for var2 in countries if var1[0] == var2[0]]
     #final_list.tolist()
     for var1 in nw_list2:
         for i, var2 in enumerate(countries):
-            print("var1[0]",var1[0])
-            print("var2",var2)
+#            print("var1[0]",var1[0])
+#            print("var2",var2)
             if var1[0] in var2:
-                print (final_list[i][1])
+#                print (final_list[i][1])
+#                print (final_list[i])
                 final_list[i][1] += var1[1]
-                print("var1[1]",var1[1])
-    for input in nw_list2:
+#                print("var1[1]",var1[1])
+    for input in nw_list2:                      # Entra no for em py -2 mas nao em -3
         print ("input= ", input)
         
     return final_list
         
+# Exc 6
+
+def insert_sort(sorted_list, n):
+    sorted_list.append(n)
+    sorted_list.sort()
+
+#    return list.sort(sorted_list)
+    return sorted_list
+
+# Exc 7
+
+def insert_sort_des(sorted_list, n):
+    sorted_list.append(n)
+    sorted_list.sort(reverse = True)
+
+#    return list.sort(sorted_list)
+    return sorted_list
     
+def insert_sort(sorted_list, n, decreacing = False):
+    sorted_list.append(n)
+    sorted_list.sort(reverse = decreacing)
+
+#    return list.sort(sorted_list)
+    return sorted_list
+    
+    
+def bigger_than(decreacing_list, num):
+    full_list = insert_sort_des(decreacing_list, num)
+#    sub_list = [ elem if not elem == num break for elem in full_list]
+#    sub_list = [ val = elem if not elem == num break for elem in full_list]
+    sub_list = [ elem for elem in full_list if elem > num ]
+    return sub_list
+
+# Exc 8
+
+def biggest_num(list):
+    list.sort(reverse = True)
+    return list[0]
+
+# Exc 9
+def upper_mean(qualif):
+    sum = 0
+    for note in qualif:
+        sum += note
         
+    mean = sum / len(qualif)
+    upper_mean = bigger_than(qualif, mean)
+    
+    return mean, upper_mean
+
+    
 # Aula Pratica 9
 # Exc 1
 #def select_sort(lista):
@@ -128,6 +194,7 @@ def bubble_sort(lista):
     return lista
     
 if __name__ == '__main__':
+    
     # Aula pratica 6
     # Exc 1
     print (inv_phrase("eu gosto de chocolate"))
@@ -138,9 +205,28 @@ if __name__ == '__main__':
     # Exc 4
     print (ins_word("Meu nome e ana", "ana", 1))
     print (ins_word("Meu nome e ana", "primeiro", 1))
+    
     # Exc 5
     print (sum_discriminate([['Brasil', 'Italia', [10, 9]], ['Brasil', 'Espanha',[5, 7]], ['Italia', 'Espanha', [7,8]]]))
     
+    # Exc 6
+    print (insert_sort([1,4,6,8,9], 7))
+    
+    # Exc 7
+    print (insert_sort_des([1,4,6,8,9], 7))
+    
+    print (bigger_than([1,4,6,8,9], 7))
+    
+    # Exc 8
+    
+    print (biggest_num([1,4,6,8,9]))
+    
+    # Exc 9
+    
+    print (upper_mean([1,4,6,8,9]))
+
+    
+    """
     # Aula pratica 9
     # Exc 1
     lista = [9,8,4,5,1,9,8,6,4,8,9,2,3]
@@ -149,5 +235,5 @@ if __name__ == '__main__':
     print (select_sort(lista))
     # Exc 2
     print (bubble_sort(lista))
-    
+    """
     

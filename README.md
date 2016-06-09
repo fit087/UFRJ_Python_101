@@ -1,4 +1,4 @@
-# UFRJ_Computacao_1
+# UFRJ Computacao 1
 Exercicios da Aula de Computação 1 da UFRJ
 
 ## Links

@@ -1,4 +1,7 @@
 # UFRJ Computacao 1
+
+[![Build Status](https://travis-ci.org/fit087/UFRJ_Computacao_1.svg?branch=master)](https://travis-ci.org/fit087/UFRJ_Computacao_1)
+
 Exercicios da Aula de Computação 1 da UFRJ
 
 ## Links

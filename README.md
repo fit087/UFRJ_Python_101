@@ -1,4 +1,4 @@
-# UFRJ Computacao 1
+# UFRJ Python 101
 
 [![Build Status](https://travis-ci.org/fit087/UFRJ_Computacao_1.svg?branch=master)](https://travis-ci.org/fit087/UFRJ_Computacao_1)
 
